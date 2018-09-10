@@ -1,31 +1,23 @@
 import java.util.Scanner;
 
-public class Palindrome{
-    public static void main(String[] args) {
-   Scanner scr=new Scanner(System.in);
-   String s1=scr.next();
-   int n=Integer.parseInt(s1);
-   int n1=n,sum=0,evensum=0;
-   while(n!=0)
-   {
+public class Palindrome {
+    static Scanner scr=new Scanner(System.in);
+    public static void main(String[] args){
+        String input=scr.next();
+       boolean status=isPalindrome(input);
+       if(status)
+       System.out.println("palindrome");
+       else
+           System.out.println(" not a palindrome");
+    }
 
-       int r=n%10;
-       sum=sum*10+r;
-       if(r%2==0){
-           evensum=evensum+r;
-       }
-       n=n/10;
+    private static boolean isPalindrome(String input) {
+        String reverse = "";
 
-   }
-        if(sum==n1){
-             if(evensum<=25)
-            System.out.println(sum + " is a palindrome and even sum is lessthan 25");
-             else
-                 System.out.println(sum + " is a palindrome and even sum is morethan 25");
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reverse=reverse+input.charAt(i);
         }
-        else
-            System.out.println(n1+" is not a palindrome");
+        if(input==reverse) return true;
+        return false;
     }
 }
-
-
