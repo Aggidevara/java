@@ -1,19 +1,21 @@
 import java.util.Scanner;
 
 public class VowelConsonant {
-    public static void main(String[] args) {
-        Scanner scr = new Scanner(System.in);
-        String s1 = scr.next();
+    public String[] isVowelConsonant(String input) {
+
+        String s1 = input;
+        String[] output= new String[s1.length()];
         for (int i = 0; i < s1.length(); i++) {
             char c = s1.charAt(i);
             if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) {
                 if (c == 'a' || c == 'A' || c == 'e' || c == 'E' || c == 'i' || c == 'I' || c == 'o' || c == 'O' || c == 'u' || c == 'U') {
-                    System.out.println(c + "- vowel");
+                    output[i]=c + "- vowel";
                 } else
-                    System.out.println(c + "- consonant");
+                    output[i]=c + "- consonant";
             } else
-                System.out.println("Invalid input");
+                return new String[]{"Invalid input"};
 
         }
+        return output;
     }
 }

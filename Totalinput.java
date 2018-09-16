@@ -1,15 +1,12 @@
 import java.util.Scanner;
 
 public class Totalinput {
-    public static void main(String[] args){
-        Scanner scr=new Scanner(System.in);
-        String s1=scr.nextLine();
+    public int totalInput(int[] input){
+        int[] s1=input;
         int sum=0;
-        String s2[]=  s1.split(" ",0);
-        for(int i=0;i<s2.length;i++){
-            int n=Integer.parseInt(s2[i]);
-            sum=sum+n;
+        for(int i=0;i<s1.length;i++){
+            sum=sum+s1[i];
         }
-        System.out.println(sum);
+        return sum;
     }
 }

@@ -2,9 +2,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class NonIncreasingorder {
-    public static void main(String[] args) {
-        Scanner scr = new Scanner(System.in);
-        String s1 = scr.next();
+public String noIncreasingOrder(String input){
+        String s1 = input;
         int num=Integer.parseInt(s1);
 
         int evensum=0;
@@ -22,13 +21,11 @@ public class NonIncreasingorder {
         for(int i=s1.length()-1;i>=0;i--){
             sum=sum+n[i];
         }
-        System.out.println("Non-Increasing number"+sum);
 
-        System.out.println("Sum Of even numbers - "+evensum);
         if(evensum<=15)
-            System.out.println("false");
+            return "sum of even  umbers is less than 15 and Non Increasing number is "+sum;
         else
-            System.out.println("True");
+            return "sum of even  umbers is greater than 15 and Non Increasing number is"+sum;
 
 
 
